@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="nl" data-lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handige Websites — Eshuis Real Estate Consultancy</title>
+<meta name="description" content="Een selectie betrouwbare bronnen en handige websites bij het kopen van een woning in Nederland — samengesteld door Eshuis Real Estate Consultancy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:      #f6f3ee;
+  --paper-2:    #efeae2;
+  --ink:        #201e1a;
+  --ink-soft:   #56514a;
+  --muted:      #8b857b;
+  --line:       #d8d2c7;
+  --line-soft:  #e6e0d6;
+  --espresso:   #1c1915;
+  --paper-dim:  #b8b0a3;
+  --serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --sans:  "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+  --maxw: 1280px;
+  --gutter: clamp(20px, 5vw, 88px);
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.7; font-weight: 400; overflow-x: hidden; }
+html[data-lang="nl"] [lang="en"] { display: none !important; }
+html[data-lang="en"] [lang="nl"] { display: none !important; }
+.eyebrow { font-family: var(--sans); font-size: 0.69rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; line-height: 1.04; margin: 0; color: var(--ink); }
+p { margin: 0 0 1.1em; }
+p:last-child { margin-bottom: 0; }
+a { color: inherit; }
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); }
+section { position: relative; }
+
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 22px var(--gutter); transition: background .5s var(--ease), padding .5s var(--ease), border-color .5s var(--ease); border-bottom: 1px solid transparent; }
+.site-header.scrolled { background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(14px) saturate(1.1); -webkit-backdrop-filter: blur(14px) saturate(1.1); padding-top: 14px; padding-bottom: 14px; border-color: var(--line-soft); }
+.brand { text-decoration: none; line-height: 1; display: block; }
+.brand .name { font-family: var(--serif); font-size: 1.32rem; letter-spacing: 0.04em; color: var(--ink); display: block; }
+.brand .sub { font-size: 0.56rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 4px; }
+.brand img { height: 64px; width: auto; display: block; }
+.nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 40px); }
+.nav-links { display: flex; gap: clamp(18px, 2.4vw, 38px); list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); position: relative; padding-bottom: 3px; transition: color .35s var(--ease); }
+.nav-links a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.nav-links a:hover, .nav-links a.current { color: var(--ink); }
+.nav-links a:hover::after, .nav-links a.current::after { transform: scaleX(1); }
+.lang { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 0.66rem; letter-spacing: 0.12em; }
+.lang button { appearance: none; border: 0; background: transparent; color: var(--muted); font-family: var(--sans); font-weight: 600; letter-spacing: inherit; padding: 7px 13px; cursor: pointer; transition: background .35s var(--ease), color .35s var(--ease); }
+.lang button.active { background: var(--ink); color: var(--paper); }
+
+.band { padding-block: clamp(76px, 11vh, 160px); }
+.band-top { padding-top: clamp(150px, 21vh, 230px); }
+
+.resources-intro { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(40px, 6vw, 96px); align-items: end; margin-bottom: clamp(48px, 7vh, 84px); }
+.resources-intro .eyebrow { margin-bottom: 26px; }
+.resources-intro h1 { font-size: clamp(2.6rem, 6vw, 5rem); font-weight: 300; letter-spacing: -0.02em; }
+.resources-intro h1 em { font-style: italic; font-weight: 400; }
+.resources-intro .lede { color: var(--ink-soft); font-size: 1.06rem; max-width: 46ch; }
+
+.res-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.res-item { display: grid; grid-template-columns: 64px 1fr; gap: 26px; padding: 36px 0; border-bottom: 1px solid var(--line); }
+.res-num { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--muted); padding-top: 10px; }
+.res-name { font-family: var(--serif); font-size: clamp(1.6rem, 2.6vw, 2.25rem); font-weight: 400; color: var(--ink); text-decoration: none; display: inline-flex; align-items: baseline; gap: 14px; line-height: 1.08; }
+.res-name .u { background-image: linear-gradient(var(--ink), var(--ink)); background-size: 0% 1px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .45s var(--ease); padding-bottom: 3px; }
+.res-name .arrow { font-family: var(--sans); font-size: 0.95rem; color: var(--muted); transition: transform .4s var(--ease), color .4s var(--ease); transform: translateY(-2px); }
+.res-name:hover .u { background-size: 100% 1px; }
+.res-name:hover .arrow { transform: translate(4px, -5px); color: var(--ink); }
+.res-desc { color: var(--ink-soft); margin-top: 13px; max-width: 70ch; font-size: 1.02rem; line-height: 1.6; }
+.res-domain { margin-top: 15px; font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+.res-note { margin-top: clamp(40px, 6vh, 72px); color: var(--muted); font-size: 0.92rem; max-width: 62ch; }
+.res-note a { color: var(--ink-soft); text-underline-offset: 3px; }
+
+.site-footer { background: var(--espresso); color: var(--paper-dim); padding-block: clamp(56px, 8vh, 96px); }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.footer-brand .name { font-family: var(--serif); font-size: 1.7rem; color: var(--paper); letter-spacing: 0.03em; }
+.footer-brand .sub { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; margin-top: 8px; }
+.footer-brand img { height: 72px; width: auto; display: block; }
+.footer-marks { display: flex; align-items: center; gap: 22px; }
+.mark { border: 1px solid rgba(255,255,255,.2); border-radius: 4px; padding: 10px 16px; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--paper-dim); }
+.mark-logo { background: transparent; border-color: transparent; padding: 0; display: inline-flex; align-items: center; }
+.mark-logo img { height: 32px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .72; }
+.footer-bot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 30px; font-size: 0.72rem; letter-spacing: 0.04em; }
+.footer-bot a { color: var(--paper-dim); text-decoration: none; }
+.footer-bot a:hover { color: var(--paper); }
+
+@media (max-width: 860px) {
+  .resources-intro { grid-template-columns: 1fr; gap: 24px; align-items: start; }
+  .res-item { grid-template-columns: 40px 1fr; gap: 16px; padding: 30px 0; }
+}
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .nav-links { display: none; }
+  .brand img { height: 48px; }
+  .footer-top { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="header">
+  <a href="index.html#top" class="brand">
+    <img src="assets/logo-dark.png" alt="Eshuis Real Estate Consultancy">
+  </a>
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a href="index.html#profiel"><span lang="nl">Profiel</span><span lang="en">Profile</span></a></li>
+      <li><a href="index.html#aankoop"><span lang="nl">Aankoop</span><span lang="en">Buying</span></a></li>
+      <li><a href="resources.html" class="current"><span lang="nl">Handige Websites</span><span lang="en">Resources</span></a></li>
+      <li><a href="index.html#contact"><span lang="nl">Contact</span><span lang="en">Contact</span></a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="nl" class="active">NL</button>
+      <button type="button" data-set-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===================== RESOURCES ===================== -->
+<section class="band band-top">
+  <div class="wrap">
+    <div class="resources-intro">
+      <div>
+        <p class="eyebrow"><span lang="nl">Voor kopers · Naslag</span><span lang="en">For buyers · Reference</span></p>
+        <h1>
+          <span lang="nl">Handige <em>websites</em></span>
+          <span lang="en">Useful <em>resources</em></span>
+        </h1>
+      </div>
+      <p class="lede">
+        <span lang="nl">Een selectie betrouwbare bronnen bij het kopen van een woning in Nederland — van waardebepaling en vergunningen tot verduurzaming en bouwkundige naslag.</span>
+        <span lang="en">A selection of reliable sources for buying a home in the Netherlands — from valuation and permits to sustainability and technical reference.</span>
+      </p>
+    </div>
+
+    <ol class="res-list">
+      <li class="res-item">
+        <span class="res-num">01</span>
+        <div class="res-body">
+          <a class="res-name" href="https://www.wozwaardeloket.nl" target="_blank" rel="noopener"><span class="u">WOZ Waardeloket</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">Informatiepunt van de overheid waar u de grondslag (waarde) van een woning vindt met betrekking tot de onroerendezaakbelasting.</span>
+            <span lang="en">Government information point where you can find a property's assessed value (WOZ) used for the property tax.</span>
+          </p>
+          <div class="res-domain">wozwaardeloket.nl</div>
+        </div>
+      </li>
+
+      <li class="res-item">
+        <span class="res-num">02</span>
+        <div class="res-body">
+          <a class="res-name" href="https://omgevingsloket.nl" target="_blank" rel="noopener"><span class="u">Omgevingsloket</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">De plek waar alle digitale informatie over de fysieke leefomgeving te vinden is — denk aan regels vanuit gemeente, provincie, waterschap en Rijk.</span>
+            <span lang="en">Where all digital information about the physical living environment comes together — rules from the municipality, province, water board and national government.</span>
+          </p>
+          <div class="res-domain">omgevingsloket.nl</div>
+        </div>
+      </li>
+
+      <li class="res-item">
+        <span class="res-num">03</span>
+        <div class="res-body">
+          <a class="res-name" href="https://www.overheid.nl/berichten-over-uw-buurt" target="_blank" rel="noopener"><span class="u">Berichten over uw buurt</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">Informeert u over bekendmakingen van de overheid: bijvoorbeeld een vergunning voor verhuur, het kappen van een boom of het uitbreiden van een terras.</span>
+            <span lang="en">Notifies you of official government announcements — for instance a rental permit, the felling of a tree or the extension of a terrace.</span>
+          </p>
+          <div class="res-domain">overheid.nl</div>
+        </div>
+      </li>
+
+      <li class="res-item">
+        <span class="res-num">04</span>
+        <div class="res-body">
+          <a class="res-name" href="https://www.kadaster.nl" target="_blank" rel="noopener"><span class="u">Kadaster</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">Registreert namens de overheid van al het vastgoed in Nederland wie eigenaar is en welke rechten gelden. Ook per postcode op te vragen: recent ingeschreven transacties met de transactieprijs.</span>
+            <span lang="en">Records, on behalf of the state, who owns each property in the Netherlands and which rights apply. By postcode you can also retrieve recently registered transactions and their prices.</span>
+          </p>
+          <div class="res-domain">kadaster.nl</div>
+        </div>
+      </li>
+
+      <li class="res-item">
+        <span class="res-num">05</span>
+        <div class="res-body">
+          <a class="res-name" href="https://www.ep-online.nl" target="_blank" rel="noopener"><span class="u">Energielabel</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">Een energielabel (EP-W) is verplicht bij de verkoop van een woning. Via EP-online vraagt u alle beschikbare informatie over een bepaalde woning op.</span>
+            <span lang="en">An energy label (EP-W) is mandatory when selling a home. Through EP-online you can look up all available label information for a given property.</span>
+          </p>
+          <div class="res-domain">ep-online.nl</div>
+        </div>
+      </li>
+
+      <li class="res-item">
+        <span class="res-num">06</span>
+        <div class="res-body">
+          <a class="res-name" href="https://www.rvo.nl/subsidies-financiering/isde" target="_blank" rel="noopener"><span class="u">ISDE Subsidie</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">De overheid stelt subsidie beschikbaar voor het verduurzamen van een woning. Hier vindt u alle relevante informatie met betrekking tot de aanvraag.</span>
+            <span lang="en">The government offers a subsidy for making a home more sustainable. Here you'll find all the relevant information for the application.</span>
+          </p>
+          <div class="res-domain">rvo.nl</div>
+        </div>
+      </li>
+
+      <li class="res-item">
+        <span class="res-num">07</span>
+        <div class="res-body">
+          <a class="res-name" href="https://www.klimaateffectatlas.nl" target="_blank" rel="noopener"><span class="u">Kaart funderingsproblematiek</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">Laat zien waar in Nederland problemen kunnen ontstaan met gebouwen op houten funderingspalen. Houten funderingen kunnen verzwakken, vooral in veen- en kleigebieden.</span>
+            <span lang="en">Shows where in the Netherlands buildings on wooden foundation piles may run into trouble. Wooden foundations can weaken, especially in peat and clay soils.</span>
+          </p>
+          <div class="res-domain">klimaateffectatlas.nl</div>
+        </div>
+      </li>
+
+      <li class="res-item">
+        <span class="res-num">08</span>
+        <div class="res-body">
+          <a class="res-name" href="https://iplo.nl/thema/bouw/bouwen-vergunning-melding/" target="_blank" rel="noopener"><span class="u">Vergunningvrij bouwen</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">Onder de Omgevingswet kan bij bouwen sprake zijn van een technische bouwactiviteit en een omgevingsplanactiviteit. Soms kan er toch zonder vergunning en melding worden gebouwd.</span>
+            <span lang="en">Under the Environment Act, building can involve a technical activity and a zoning-plan activity. In some cases you may still build without a permit or notification.</span>
+          </p>
+          <div class="res-domain">iplo.nl</div>
+        </div>
+      </li>
+
+      <li class="res-item">
+        <span class="res-num">09</span>
+        <div class="res-body">
+          <a class="res-name" href="https://www.joostdevree.nl" target="_blank" rel="noopener"><span class="u">Joost de Vree</span><span class="arrow">&#8599;</span></a>
+          <p class="res-desc">
+            <span lang="nl">Een niet-commerciële encyclopedie met onderwerpen uit de architectuur, bouwkunde en andere bouwgerelateerde vakgebieden.</span>
+            <span lang="en">A non-commercial encyclopedia covering architecture, building science and other construction-related fields.</span>
+          </p>
+          <div class="res-domain">joostdevree.nl</div>
+        </div>
+      </li>
+    </ol>
+
+    <p class="res-note">
+      <span lang="nl">Mist u een bron, of wilt u advies bij een specifieke woning? <a href="index.html#contact">Neem gerust contact op</a>.</span>
+      <span lang="en">Missing a source, or would you like advice on a specific property? <a href="index.html#contact">Feel free to get in touch</a>.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo-white.png" alt="Eshuis Real Estate Consultancy">
+      </div>
+      <div class="footer-marks">
+        <span class="mark mark-logo"><img src="assets/vastgoedcert.png" alt="VastgoedCert geregistreerd makelaar"></span>
+        <span class="mark">KvK 34133633</span>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© <span id="year"></span> Eshuis Real Estate Consultancy — Maarten Eshuis</span>
+      <a href="https://www.eshuisrec.nl/_files/ugd/894869_6e6a1c168f244cbeb0d4ee052b8b0149.pdf" target="_blank" rel="noopener">
+        <span lang="nl">Algemene Voorwaarden</span><span lang="en">Terms &amp; Conditions</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem('eshuis-lang'); } catch (e) {}
+  if (saved === 'nl' || saved === 'en') setLang(saved);
+
+  function setLang(l) {
+    root.setAttribute('data-lang', l);
+    root.setAttribute('lang', l);
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-set-lang') === l);
+    });
+    try { localStorage.setItem('eshuis-lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); });
+  });
+
+  var header = document.getElementById('header');
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 40); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
