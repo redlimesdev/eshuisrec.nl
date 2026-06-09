@@ -10,15 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper:      #f6f3ee;
+  --paper:      #e5e0d9;
   --paper-2:    #efeae2;
   --ink:        #201e1a;
   --ink-soft:   #56514a;
   --muted:      #8b857b;
   --line:       #d8d2c7;
   --line-soft:  #e6e0d6;
-  --espresso:   #1c1915;
+  --espresso:   #2a2620;
   --paper-dim:  #b8b0a3;
+  --brand:      #504416;
+  --gold:        #e5e0d9;
   --serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
   --sans:  "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
   --maxw: 1280px;
@@ -39,21 +41,25 @@ a { color: inherit; }
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); }
 section { position: relative; }
 
-.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 22px var(--gutter); transition: background .5s var(--ease), padding .5s var(--ease), border-color .5s var(--ease); border-bottom: 1px solid transparent; }
-.site-header.scrolled { background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(14px) saturate(1.1); -webkit-backdrop-filter: blur(14px) saturate(1.1); padding-top: 14px; padding-bottom: 14px; border-color: var(--line-soft); }
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 22px var(--gutter); background: rgba(42, 38, 32, 0.92); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2); transition: padding .5s var(--ease), border-color .5s var(--ease), background .5s var(--ease); border-bottom: 1px solid transparent; overflow: hidden; }
+.header-illus { position: absolute; left: calc(var(--gutter) + 372px); top: 50%; transform: translateY(-44%); height: 110px; pointer-events: none; opacity: 0.33; z-index: 2; }
+.header-illus img { height: 100%; width: auto; display: block; }
+.brand, .nav { position: relative; z-index: 1; }
+.site-header .brand { margin-left: -10px; }
+.site-header.scrolled { background: rgba(42, 38, 32, 0.78); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2); padding-top: 14px; padding-bottom: 14px; border-color: rgba(229,224,217,.1); }
 .brand { text-decoration: none; line-height: 1; display: block; }
 .brand .name { font-family: var(--serif); font-size: 1.32rem; letter-spacing: 0.04em; color: var(--ink); display: block; }
 .brand .sub { font-size: 0.56rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 4px; }
-.brand img { height: 64px; width: auto; display: block; }
+.brand img { height: 28px; width: auto; display: block; }
 .nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 40px); }
 .nav-links { display: flex; gap: clamp(18px, 2.4vw, 38px); list-style: none; margin: 0; padding: 0; }
-.nav-links a { text-decoration: none; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); position: relative; padding-bottom: 3px; transition: color .35s var(--ease); }
-.nav-links a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
-.nav-links a:hover { color: var(--ink); }
+.nav-links a { text-decoration: none; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); opacity: 0.72; position: relative; padding-bottom: 3px; transition: color .35s var(--ease); }
+.nav-links a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.nav-links a:hover { color: var(--gold); opacity: 1; }
 .nav-links a:hover::after { transform: scaleX(1); }
-.lang { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 0.66rem; letter-spacing: 0.12em; }
-.lang button { appearance: none; border: 0; background: transparent; color: var(--muted); font-family: var(--sans); font-weight: 600; letter-spacing: inherit; padding: 7px 13px; cursor: pointer; transition: background .35s var(--ease), color .35s var(--ease); }
-.lang button.active { background: var(--ink); color: var(--paper); }
+.lang { display: inline-flex; align-items: center; border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent); border-radius: 999px; overflow: hidden; font-size: 0.66rem; letter-spacing: 0.12em; }
+.lang button { appearance: none; border: 0; background: transparent; color: var(--gold); opacity: 0.72; font-family: var(--sans); font-weight: 600; letter-spacing: inherit; padding: 7px 13px; cursor: pointer; transition: background .35s var(--ease), color .35s var(--ease), opacity .35s; }
+.lang button.active { background: var(--gold); color: var(--paper); opacity: 1; }
 
 .hero { min-height: 100svh; display: grid; grid-template-columns: 1.15fr 0.85fr; grid-template-rows: 1fr auto; align-items: center; gap: clamp(24px, 4vw, 64px); padding: 128px var(--gutter) clamp(28px, 5vh, 56px); max-width: var(--maxw); margin: 0 auto; }
 .hero-copy { align-self: center; }
@@ -89,7 +95,7 @@ section { position: relative; }
 
 .approach { background: var(--espresso); color: var(--paper); }
 .approach .eyebrow { color: var(--paper-dim); }
-.approach .lead { font-family: var(--serif); font-weight: 300; font-size: clamp(1.7rem, 3vw, 2.7rem); line-height: 1.18; max-width: 20ch; margin: 0 0 clamp(48px, 7vh, 88px); }
+.approach .lead { font-family: var(--serif); font-weight: 300; font-size: clamp(1.7rem, 3vw, 2.7rem); line-height: 1.18; max-width: 20ch; margin: 0 0 clamp(48px, 7vh, 88px); color: var(--paper); }
 .approach .lead em { font-style: italic; }
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 64px); border-top: 1px solid rgba(255,255,255,.16); }
 .pillar { padding-top: 30px; }
@@ -102,7 +108,7 @@ section { position: relative; }
 .process-intro p { color: var(--ink-soft); }
 .steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); columns: 2; column-gap: clamp(40px, 6vw, 96px); }
 .step { break-inside: avoid; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; padding: 26px 0; border-bottom: 1px solid var(--line); }
-.step .num { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--muted); }
+.step .num { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--brand); }
 .step .txt { color: var(--ink-soft); font-size: 1.02rem; line-height: 1.55; }
 
 .contact { background: var(--paper-2); }
@@ -132,18 +138,18 @@ section { position: relative; }
 .form-success .serif { font-family: var(--serif); font-size: 1.7rem; line-height: 1.25; display: block; margin-bottom: 12px; }
 .form-success p { color: var(--ink-soft); font-size: 0.95rem; }
 
-.site-footer { background: var(--espresso); color: var(--paper-dim); padding-block: clamp(56px, 8vh, 96px); }
-.footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.site-footer { background: var(--espresso); color: var(--gold); padding-block: clamp(56px, 8vh, 96px); }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid rgba(201,168,67,.2); }
 .footer-brand .name { font-family: var(--serif); font-size: 1.7rem; color: var(--paper); letter-spacing: 0.03em; }
 .footer-brand .sub { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; margin-top: 8px; }
-.footer-brand img { height: 72px; width: auto; display: block; }
+.footer-brand img { height: 28px; width: auto; display: block; }
 .footer-marks { display: flex; align-items: center; gap: 22px; }
-.mark { border: 1px solid rgba(255,255,255,.2); border-radius: 4px; padding: 10px 16px; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--paper-dim); }
+.mark { border: 1px solid rgba(201,168,67,.35); border-radius: 4px; padding: 10px 16px; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
 .mark-logo { background: transparent; border-color: transparent; padding: 0; display: inline-flex; align-items: center; }
-.mark-logo img { height: 32px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .72; }
+.mark-logo img { height: 32px; width: auto; display: block; filter: brightness(0) invert(1) sepia(0.15) brightness(0.93); opacity: .9; }
 .footer-bot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 30px; font-size: 0.72rem; letter-spacing: 0.04em; }
-.footer-bot a { color: var(--paper-dim); text-decoration: none; }
-.footer-bot a:hover { color: var(--paper); }
+.footer-bot a { color: var(--gold); text-decoration: none; }
+.footer-bot a:hover { color: #f0ebe2; }
 
 .reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
 
@@ -161,7 +167,7 @@ section { position: relative; }
 @media (max-width: 620px) {
   body { font-size: 16px; }
   .nav-links { display: none; }
-  .brand img { height: 48px; }
+  .brand img { height: 24px; }
   .pillars { grid-template-columns: 1fr; gap: 0; }
   .pillar { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,.16); }
   .creds { grid-template-columns: 1fr; }
@@ -176,6 +182,7 @@ section { position: relative; }
 
 <!-- ===================== HEADER ===================== -->
 <header class="site-header" id="header">
+  <div class="header-illus"><img src="assets/mid_century_olive.png" alt=""></div>
   <a href="#top" class="brand">
     <img src="assets/logo-dark.png" alt="Eshuis Real Estate Consultancy">
   </a>
@@ -415,7 +422,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo-white.png" alt="Eshuis Real Estate Consultancy">
+        <img src="assets/logo-gold.png?v=3" alt="Eshuis Real Estate Consultancy">
       </div>
       <div class="footer-marks">
         <span class="mark mark-logo"><img src="assets/vastgoedcert.png" alt="VastgoedCert geregistreerd makelaar"></span>
