@@ -157,7 +157,7 @@ section { position: relative; }
   .hero { grid-template-columns: 1fr; grid-template-rows: auto; min-height: auto; align-items: start; gap: 36px; padding-top: 116px; padding-bottom: 64px; }
   .hero-copy { order: 0; }
   .hero-portrait { order: 1; min-height: 0; }
-  .hero-portrait img { min-height: 340px; aspect-ratio: 5/4; }
+  .hero-portrait img { width: 100%; height: auto; min-height: 0; aspect-ratio: 3/4; object-fit: cover; object-position: 50% 15%; }
   .scroll-cue { display: none; }
   .profile-grid { grid-template-columns: 1fr; gap: 44px; }
   .process-intro { grid-template-columns: 1fr; gap: 24px; }
