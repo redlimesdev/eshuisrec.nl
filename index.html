@@ -398,6 +398,10 @@ section { position: relative; }
             <textarea id="f-msg" name="message" placeholder=" " required></textarea>
             <label for="f-msg"><span lang="nl">Uw bericht</span><span lang="en">Your message</span></label>
           </div>
+          <div class="field field-captcha">
+            <input type="text" id="f-captcha" placeholder=" " autocomplete="off" inputmode="numeric" required>
+            <label for="f-captcha" id="captchaLabel">…</label>
+          </div>
           <div class="form-actions">
             <button type="submit" class="submit">
               <span lang="nl">Verzenden</span><span lang="en">Send</span>
@@ -431,7 +435,7 @@ section { position: relative; }
     </div>
     <div class="footer-bot">
       <span>© <span id="year"></span> Eshuis Real Estate Consultancy — Maarten Eshuis</span>
-      <a href="https://www.eshuisrec.nl/_files/ugd/894869_6e6a1c168f244cbeb0d4ee052b8b0149.pdf" target="_blank" rel="noopener">
+      <a href="/makelaar-2015.pdf" target="_blank" rel="noopener">
         <span lang="nl">Algemene Voorwaarden</span><span lang="en">Terms &amp; Conditions</span>
       </a>
     </div>
@@ -502,11 +506,41 @@ section { position: relative; }
     input.addEventListener('blur', function () { input.closest('.field').classList.remove('focus'); });
   });
 
-  /* ---- Contact form (Formspree-ready) ---- */
+  /* ---- Arithmetic CAPTCHA ---- */
+  var captchaA = Math.floor(Math.random() * 7) + 2;
+  var captchaB = Math.floor(Math.random() * 7) + 2;
+  var captchaAnswer = captchaA + captchaB;
+  var captchaLabel = document.getElementById('captchaLabel');
+  var captchaInput = document.getElementById('f-captcha');
+  function setCaptchaLabel() {
+    var lang = root.getAttribute('data-lang') || 'nl';
+    captchaLabel.textContent = lang === 'nl'
+      ? captchaA + ' + ' + captchaB + ' = ?'
+      : captchaA + ' + ' + captchaB + ' = ?';
+  }
+  setCaptchaLabel();
+  document.querySelectorAll('[data-set-lang]').forEach(function(b) {
+    b.addEventListener('click', setCaptchaLabel);
+  });
+
+
   var form = document.getElementById('contactForm');
   var success = document.getElementById('formSuccess');
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    // Verify CAPTCHA
+    if (parseInt(captchaInput.value, 10) !== captchaAnswer) {
+      captchaInput.value = '';
+      captchaInput.focus();
+      captchaInput.style.borderColor = 'red';
+      setTimeout(function() { captchaInput.style.borderColor = ''; }, 1200);
+      // Regenerate
+      captchaA = Math.floor(Math.random() * 7) + 2;
+      captchaB = Math.floor(Math.random() * 7) + 2;
+      captchaAnswer = captchaA + captchaB;
+      setCaptchaLabel();
+      return;
+    }
     var action = form.getAttribute('action') || '';
     var done = function () { form.style.display = 'none'; success.classList.add('show'); };
 
